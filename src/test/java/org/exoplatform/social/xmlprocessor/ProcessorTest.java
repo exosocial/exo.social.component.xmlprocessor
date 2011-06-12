@@ -16,18 +16,18 @@
  */
 package org.exoplatform.social.xmlprocessor;
 
-import org.exoplatform.social.xmlprocessor.Filter;
 import org.exoplatform.social.xmlprocessor.Processor;
-import org.exoplatform.social.xmlprocessor.filter.xml.DOMContentEscapeFilter;
-import org.exoplatform.social.xmlprocessor.filter.xml.DOMLineBreakerFilter;
-import org.exoplatform.social.xmlprocessor.filter.xml.DOMXMLTagFilter;
-import org.exoplatform.social.xmlprocessor.filter.xml.LineBreakerFilter;
-import org.exoplatform.social.xmlprocessor.filter.xml.XMLBalancer;
-import org.exoplatform.social.xmlprocessor.filter.xml.XMLTagFilter;
-import org.exoplatform.social.xmlprocessor.filter.xml.XMLTagFilterPolicy;
-import org.exoplatform.social.xmlprocessor.filter.xml.model.Node;
-import org.exoplatform.social.xmlprocessor.filter.xml.util.DOMParser;
-import org.exoplatform.social.xmlprocessor.filter.xml.util.Tokenizer;
+import org.exoplatform.social.xmlprocessor.api.Filter;
+import org.exoplatform.social.xmlprocessor.impl.DOMContentEscapeFilter;
+import org.exoplatform.social.xmlprocessor.impl.DOMLineBreakerFilter;
+import org.exoplatform.social.xmlprocessor.impl.DOMXMLTagFilter;
+import org.exoplatform.social.xmlprocessor.impl.LineBreakerFilter;
+import org.exoplatform.social.xmlprocessor.impl.XMLBalancer;
+import org.exoplatform.social.xmlprocessor.impl.XMLTagFilter;
+import org.exoplatform.social.xmlprocessor.model.Node;
+import org.exoplatform.social.xmlprocessor.model.XMLTagFilterPolicy;
+import org.exoplatform.social.xmlprocessor.util.DOMParser;
+import org.exoplatform.social.xmlprocessor.util.Tokenizer;
 
 import junit.framework.TestCase;
 

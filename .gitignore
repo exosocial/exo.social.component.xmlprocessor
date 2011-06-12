@@ -4,4 +4,4 @@ target
 *.iws
 *.project
 *.classpath
-
+*.settings

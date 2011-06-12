@@ -19,6 +19,8 @@ package org.exoplatform.social.xmlprocessor;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+import org.exoplatform.social.xmlprocessor.api.Filter;
+
 /**
  * The Processor is an Object which contain many Filter clustered as a queue
  * each input should run though many filter using Processor.

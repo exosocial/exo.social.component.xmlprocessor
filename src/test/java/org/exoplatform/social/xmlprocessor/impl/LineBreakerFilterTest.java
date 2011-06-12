@@ -14,19 +14,20 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor;
+package org.exoplatform.social.xmlprocessor.impl;
 
-/**
- * Interface of Filter, if you want to write your own filter you must implement 
- * this interface in your class.
- * @author Ly Minh Phuong - http://phuonglm.net
- *
- */
-public interface Filter {
-  /**
-   * The Processor'll call this function on each filter to process the Data
-   * @param input
-   * @return an Object which the result after filtered
-   */
-  public Object doFilter(Object input);
+import org.exoplatform.social.xmlprocessor.api.Filter;
+import org.exoplatform.social.xmlprocessor.impl.LineBreakerFilter;
+
+import junit.framework.TestCase;
+
+public class LineBreakerFilterTest extends TestCase {
+
+  public void testBreakLineFilter() {
+    Filter breakLineFilter = new LineBreakerFilter();
+
+    assertEquals("hello 1<br />", breakLineFilter.doFilter("hello 1\n"));
+    assertEquals("3 < 5<br /> >", breakLineFilter.doFilter("3 < 5\n >"));
+  }
+
 }

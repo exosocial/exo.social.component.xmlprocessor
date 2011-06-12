@@ -14,12 +14,12 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor.filter.xml;
+package org.exoplatform.social.xmlprocessor.impl;
 
 import java.util.LinkedList;
 
-import org.exoplatform.social.xmlprocessor.Filter;
-import org.exoplatform.social.xmlprocessor.filter.xml.model.Node;
+import org.exoplatform.social.xmlprocessor.api.Filter;
+import org.exoplatform.social.xmlprocessor.model.Node;
 
 /**
  * This Filter check if DOM tree Content contain native line-break character and

@@ -14,13 +14,13 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor.filter.xml.util;
+package org.exoplatform.social.xmlprocessor.util;
 
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.exoplatform.social.xmlprocessor.filter.xml.model.Node;
+import org.exoplatform.social.xmlprocessor.model.Node;
 
 /**
  * DOMParser utility

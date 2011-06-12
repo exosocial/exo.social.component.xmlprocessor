@@ -1,9 +1,10 @@
-package org.exoplatform.social.xmlprocessor.filter.xml.util;
+package org.exoplatform.social.xmlprocessor.impl.util;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.exoplatform.social.xmlprocessor.filter.xml.model.Node;
+import org.exoplatform.social.xmlprocessor.model.Node;
+import org.exoplatform.social.xmlprocessor.util.DOMParser;
 
 import junit.framework.TestCase;
 

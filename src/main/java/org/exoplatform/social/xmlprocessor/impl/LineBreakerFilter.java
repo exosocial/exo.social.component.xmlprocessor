@@ -14,9 +14,9 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor.filter.xml;
+package org.exoplatform.social.xmlprocessor.impl;
 
-import org.exoplatform.social.xmlprocessor.Filter;
+import org.exoplatform.social.xmlprocessor.api.Filter;
 
 /**
  * This Filter repace native line break character in String input and replace it
