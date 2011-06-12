@@ -1,4 +1,4 @@
-package org.exoplatform.social.xmlprocessor.impl.util;
+package org.exoplatform.social.xmlprocessor.util;
 
 import java.util.List;
 
