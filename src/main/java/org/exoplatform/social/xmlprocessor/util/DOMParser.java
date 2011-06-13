@@ -35,7 +35,7 @@ public class DOMParser {
       .compile("</(?i)(\\w+\\b)\\s*>$"); // </tag .........>
   public static final Pattern SELFTCLOSETAGPATTERN = Pattern.compile("<.+/\\s*?>");
   public static final Pattern ATTRIBUTESPATTERN = Pattern
-      .compile("(\\w*)\\s*=\\s*\"([^\"]*)\""); // prop="...."
+      .compile("(\\w*)\\s*=\\s*(\"([^\"]*)\"|'([^']*)')"); // prop="...."
   
   /**
    * This Function create the XML DOM tree from XML token List tree.
@@ -109,7 +109,7 @@ public class DOMParser {
 
             while (attributes.find()) {
               String attr = attributes.group(1).toLowerCase();
-              String val = attributes.group(2);
+              String val = attributes.group(4)==null?attributes.group(3):attributes.group(4);
               parsingNode.addAttribute(attr, val);
             }
             currentNode.addChildNode(parsingNode);

@@ -51,7 +51,7 @@ public class XMLTagFilter implements Filter {
     this.whiteList = whiteList;
   }
   /**
-   * Contructor, the policy must be set from constructor
+   * Contructor, the policy must be set from constructor.
    * @param policy
    */
   public XMLTagFilter(XMLTagFilterPolicy policy) {
@@ -92,7 +92,7 @@ public class XMLTagFilter implements Filter {
             
             while (attributes.find()) {
                     String attr = attributes.group(1).toLowerCase();
-                    String val = attributes.group(2);
+                    String val = attributes.group(4)==null?attributes.group(3):attributes.group(4);
                     if(attributesWhiteList.hasKey(attr)){
                       tagStringBuilder.append(" "+attr+"="+"\""+val+"\"");
                     }

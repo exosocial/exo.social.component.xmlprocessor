@@ -14,12 +14,13 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor;
+package org.exoplatform.social.xmlprocessor.impl;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 
 import org.exoplatform.social.xmlprocessor.api.Filter;
+import org.exoplatform.social.xmlprocessor.api.Processor;
 
 /**
  * The Processor is an Object which contain many Filter clustered as a queue
@@ -28,21 +29,18 @@ import org.exoplatform.social.xmlprocessor.api.Filter;
  * @author Ly Minh Phuong - http://phuonglm.net
  * 
  */
-public class Processor {
+public class ProcessorImpl implements Processor {
   LinkedList<Filter> filters;
 
-  /**
-   * Add Filter to Processor
-   * 
-   * @param filter
+  /* (non-Javadoc)
+   * @see org.exoplatform.social.xmlprocessor.Processor#addFilter(org.exoplatform.social.xmlprocessor.api.Filter)
    */
   public void addFilter(Filter filter) {
     filters.add(filter);
   }
 
-  /**
-   * Remove a filter which instant of Class from queue.
-   * @param className
+  /* (non-Javadoc)
+   * @see org.exoplatform.social.xmlprocessor.Processor#removeFilter(java.lang.Class)
    */
   public void removeFilter(Class className) {
     LinkedList<Filter> filtersClone = (LinkedList<Filter>) filters.clone();
@@ -55,14 +53,12 @@ public class Processor {
     }
   }
 
-  Processor() {
+  public ProcessorImpl() {
     filters = new LinkedList<Filter>();
   }
 
-  /**
-   * Process an Object though Filter chain.
-   * @param input
-   * @return
+  /* (non-Javadoc)
+   * @see org.exoplatform.social.xmlprocessor.Processor#process(java.lang.Object)
    */
   public Object process(Object input) {
     for (Iterator<Filter> filterIterator = filters.iterator();

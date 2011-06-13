@@ -71,7 +71,7 @@ public class XMLBalancer implements Filter {
 
         while (attributes.find()) {
           String attr = attributes.group(1).toLowerCase();
-          String val = attributes.group(2);
+          String val = attributes.group(4)==null?attributes.group(3):attributes.group(4);
           parsingNode.addAttribute(attr, val);
         }
         currentNode.addChildNode(parsingNode);

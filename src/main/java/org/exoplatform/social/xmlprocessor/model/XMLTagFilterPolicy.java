@@ -55,17 +55,21 @@ public class XMLTagFilterPolicy {
     }
   }
   /**
-   * Add Tag and Attrubutes to whitelist.
-   * @param tag
-   * @param attributes
+   * Add Tag and Attrubutes to whitelist. If tag Not in
+   * @param tag which tag of this attribute list
+   * @param attributes attribute List which add to AlowTag
    */
   public void addAllowAttributes(String tag, String... attributes){
     String nomarlTag = tag.toLowerCase();
+    Attributes attributesToAdd;
     if(whiteList.containsKey(nomarlTag)){      
-      Attributes attributesHashMap = whiteList.get(tag);
-      for(String attribute: attributes){
-        attributesHashMap.put(attribute.toLowerCase(), null);
-      }
+      attributesToAdd = whiteList.get(tag);
+    } else {
+      attributesToAdd = new Attributes();
+      whiteList.put(nomarlTag, attributesToAdd);
+    }    
+    for(String attribute: attributes){
+      attributesToAdd.put(attribute.toLowerCase(), null);
     }
   }
   

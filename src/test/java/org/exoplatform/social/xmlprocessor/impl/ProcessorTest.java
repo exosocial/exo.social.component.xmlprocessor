@@ -14,17 +14,16 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor;
+package org.exoplatform.social.xmlprocessor.impl;
 
-import org.exoplatform.social.xmlprocessor.Processor;
 import org.exoplatform.social.xmlprocessor.api.Filter;
+import org.exoplatform.social.xmlprocessor.api.Processor;
 import org.exoplatform.social.xmlprocessor.impl.DOMContentEscapeFilter;
 import org.exoplatform.social.xmlprocessor.impl.DOMLineBreakerFilter;
 import org.exoplatform.social.xmlprocessor.impl.DOMXMLTagFilter;
 import org.exoplatform.social.xmlprocessor.impl.LineBreakerFilter;
 import org.exoplatform.social.xmlprocessor.impl.XMLBalancer;
 import org.exoplatform.social.xmlprocessor.impl.XMLTagFilter;
-import org.exoplatform.social.xmlprocessor.model.Node;
 import org.exoplatform.social.xmlprocessor.model.XMLTagFilterPolicy;
 import org.exoplatform.social.xmlprocessor.util.DOMParser;
 import org.exoplatform.social.xmlprocessor.util.Tokenizer;
@@ -37,7 +36,7 @@ import junit.framework.TestCase;
 */
 public class ProcessorTest extends TestCase {
     public void testXMLBalancer() {
-      Processor processor = new Processor();
+      Processor processor = new ProcessorImpl();
       LineBreakerFilter breakLineFilter = new LineBreakerFilter();
       XMLBalancer xmlBalancer = new XMLBalancer();
       
@@ -59,7 +58,7 @@ public class ProcessorTest extends TestCase {
     }
     
     public void testXMLFilter() {
-      Processor processor = new Processor();
+      Processor processor = new ProcessorImpl();
       XMLTagFilterPolicy tagFilterPolicy = new XMLTagFilterPolicy();
       tagFilterPolicy.addAllowTags("div","p","b","br","a");
       XMLTagFilter xmlFilter = new XMLTagFilter(tagFilterPolicy);
@@ -77,7 +76,7 @@ public class ProcessorTest extends TestCase {
     }
     
     public void testXMLFilterWithTagAndAttributes() {
-      Processor processor = new Processor();
+      Processor processor = new ProcessorImpl();
       XMLTagFilterPolicy tagFilterPolicy = new XMLTagFilterPolicy();
       tagFilterPolicy.addAllowTags("div","p","b","br","a");
       XMLTagFilter xmlFilter = new XMLTagFilter(tagFilterPolicy);
@@ -94,9 +93,11 @@ public class ProcessorTest extends TestCase {
     }
     
     public void testXMLDOMFilterAndEscapeWithTagAndAttributes() {
-      Processor processor = new Processor();
+      Processor processor = new ProcessorImpl();
       XMLTagFilterPolicy tagFilterPolicy = new XMLTagFilterPolicy();
       tagFilterPolicy.addAllowTags("div","p","b","br","a");
+      tagFilterPolicy.addAllowAttributes("a","href");
+
       
       Filter domxmlTagFilter = new DOMXMLTagFilter(tagFilterPolicy);
       Filter domContentEscapeFilter = new DOMContentEscapeFilter();
@@ -112,7 +113,8 @@ public class ProcessorTest extends TestCase {
       assertEquals("hello 1&lt;/a&gt;", processor.process(DOMParser.createDOMTree( Tokenizer.tokenize("hello 1</a>"))).toString());      
       assertEquals("&lt;a&lt;b&gt;Hello 2&lt;a&gt;&lt;b&gt;", processor.process(DOMParser.createDOMTree( Tokenizer.tokenize("<a<b>Hello 2<a><b>"))).toString());      
       assertEquals("<a>Hello 2</a>", processor.process(DOMParser.createDOMTree( Tokenizer.tokenize("<a>Hello 2</a>"))).toString());      
-      assertEquals("<a>Hello 2<b /></a>", processor.process(DOMParser.createDOMTree( Tokenizer.tokenize("<a>Hello 2<b /></a>"))).toString());      
+      assertEquals("<a>Hello 2<b /></a>", processor.process(DOMParser.createDOMTree( Tokenizer.tokenize("<a>Hello 2<b /></a>"))).toString());
+      assertEquals("<a href=\"abc\">Hello 2<b /></a>", processor.process(DOMParser.createDOMTree( Tokenizer.tokenize("<a href='abc' id='def'>Hello 2<b /></a>"))).toString());      
     }
 
 }
