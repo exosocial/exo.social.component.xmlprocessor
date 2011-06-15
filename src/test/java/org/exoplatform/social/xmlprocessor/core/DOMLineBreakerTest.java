@@ -14,12 +14,12 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor.impl;
+package org.exoplatform.social.xmlprocessor.core;
 
-import org.exoplatform.social.xmlprocessor.impl.DOMLineBreakerFilter;
-import org.exoplatform.social.xmlprocessor.model.Node;
-import org.exoplatform.social.xmlprocessor.util.DOMParser;
-import org.exoplatform.social.xmlprocessor.util.Tokenizer;
+import org.exoplatform.social.xmlprocessor.core.DOMLineBreakerFilter;
+import org.exoplatform.social.xmlprocessor.core.model.Node;
+import org.exoplatform.social.xmlprocessor.core.util.DOMParser;
+import org.exoplatform.social.xmlprocessor.core.util.Tokenizer;
 
 import junit.framework.TestCase;
 

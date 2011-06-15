@@ -14,17 +14,17 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor.impl;
+package org.exoplatform.social.xmlprocessor.core;
 
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.exoplatform.social.xmlprocessor.api.Filter;
-import org.exoplatform.social.xmlprocessor.model.Attributes;
-import org.exoplatform.social.xmlprocessor.model.XMLTagFilterPolicy;
-import org.exoplatform.social.xmlprocessor.util.DOMParser;
-import org.exoplatform.social.xmlprocessor.util.Tokenizer;
+import org.exoplatform.social.xmlprocessor.core.model.Attributes;
+import org.exoplatform.social.xmlprocessor.core.model.XMLTagFilterPolicy;
+import org.exoplatform.social.xmlprocessor.core.util.DOMParser;
+import org.exoplatform.social.xmlprocessor.core.util.Tokenizer;
 
 /**
  * This is XML Tags and Attributes filter from String input base on whitelist. 

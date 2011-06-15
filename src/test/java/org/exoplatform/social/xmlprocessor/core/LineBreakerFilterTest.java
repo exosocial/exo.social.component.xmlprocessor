@@ -14,10 +14,10 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor.impl;
+package org.exoplatform.social.xmlprocessor.core;
 
 import org.exoplatform.social.xmlprocessor.api.Filter;
-import org.exoplatform.social.xmlprocessor.impl.LineBreakerFilter;
+import org.exoplatform.social.xmlprocessor.core.LineBreakerFilter;
 
 import junit.framework.TestCase;
 

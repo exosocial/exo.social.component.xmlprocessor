@@ -14,15 +14,15 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor.impl;
+package org.exoplatform.social.xmlprocessor.core;
 
 import java.util.List;
 import java.util.regex.Matcher;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.exoplatform.social.xmlprocessor.api.Filter;
-import org.exoplatform.social.xmlprocessor.model.Node;
-import org.exoplatform.social.xmlprocessor.util.DOMParser;
-import org.exoplatform.social.xmlprocessor.util.Tokenizer;
+import org.exoplatform.social.xmlprocessor.core.model.Node;
+import org.exoplatform.social.xmlprocessor.core.util.DOMParser;
+import org.exoplatform.social.xmlprocessor.core.util.Tokenizer;
 
 /**
  * This Filter try Smart way to autoCorrect the typo in HTML input (auto close
@@ -42,7 +42,7 @@ public class XMLBalancer implements Filter {
  * @param xmlString
  * @return
  */
-  public Node createDOMTree(String xmlString) {
+  private Node createDOMTree(String xmlString) {
     Node rootNode = new Node();
     Node parsingNode = rootNode;
     Node currentNode = rootNode;

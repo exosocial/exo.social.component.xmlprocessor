@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor.model;
+package org.exoplatform.social.xmlprocessor.core.model;
 
 import java.util.LinkedList;
 
@@ -205,7 +205,7 @@ public class Node {
     boolean selfClosedTag = false;
     boolean textTag = false;
 
-    if (attributes.size() == 0 && childNodes.size() == 0 && content.equals("")) {
+    if (childNodes.size() == 0 && content.equals("")) {
       selfClosedTag = true;
     }
     if (attributes.size() == 0 && childNodes.size() == 0 && !content.equals("")

@@ -1,8 +1,8 @@
-package org.exoplatform.social.xmlprocessor.util;
+package org.exoplatform.social.xmlprocessor.core.util;
 
 import java.util.List;
 
-import org.exoplatform.social.xmlprocessor.util.Tokenizer;
+import org.exoplatform.social.xmlprocessor.core.util.Tokenizer;
 
 import junit.framework.TestCase;
 

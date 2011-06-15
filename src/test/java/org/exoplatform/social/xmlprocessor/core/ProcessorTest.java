@@ -14,19 +14,20 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor.impl;
+package org.exoplatform.social.xmlprocessor.core;
 
 import org.exoplatform.social.xmlprocessor.api.Filter;
 import org.exoplatform.social.xmlprocessor.api.Processor;
-import org.exoplatform.social.xmlprocessor.impl.DOMContentEscapeFilter;
-import org.exoplatform.social.xmlprocessor.impl.DOMLineBreakerFilter;
-import org.exoplatform.social.xmlprocessor.impl.DOMXMLTagFilter;
-import org.exoplatform.social.xmlprocessor.impl.LineBreakerFilter;
-import org.exoplatform.social.xmlprocessor.impl.XMLBalancer;
-import org.exoplatform.social.xmlprocessor.impl.XMLTagFilter;
-import org.exoplatform.social.xmlprocessor.model.XMLTagFilterPolicy;
-import org.exoplatform.social.xmlprocessor.util.DOMParser;
-import org.exoplatform.social.xmlprocessor.util.Tokenizer;
+import org.exoplatform.social.xmlprocessor.core.DOMContentEscapeFilter;
+import org.exoplatform.social.xmlprocessor.core.DOMLineBreakerFilter;
+import org.exoplatform.social.xmlprocessor.core.DOMXMLTagFilter;
+import org.exoplatform.social.xmlprocessor.core.LineBreakerFilter;
+import org.exoplatform.social.xmlprocessor.core.ProcessorImpl;
+import org.exoplatform.social.xmlprocessor.core.XMLBalancer;
+import org.exoplatform.social.xmlprocessor.core.XMLTagFilter;
+import org.exoplatform.social.xmlprocessor.core.model.XMLTagFilterPolicy;
+import org.exoplatform.social.xmlprocessor.core.util.DOMParser;
+import org.exoplatform.social.xmlprocessor.core.util.Tokenizer;
 
 import junit.framework.TestCase;
 

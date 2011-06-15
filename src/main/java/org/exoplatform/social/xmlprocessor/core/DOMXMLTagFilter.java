@@ -14,16 +14,16 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor.impl;
+package org.exoplatform.social.xmlprocessor.core;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 
 import org.exoplatform.social.xmlprocessor.api.Filter;
-import org.exoplatform.social.xmlprocessor.model.Attributes;
-import org.exoplatform.social.xmlprocessor.model.Node;
-import org.exoplatform.social.xmlprocessor.model.XMLTagFilterPolicy;
+import org.exoplatform.social.xmlprocessor.core.model.Attributes;
+import org.exoplatform.social.xmlprocessor.core.model.Node;
+import org.exoplatform.social.xmlprocessor.core.model.XMLTagFilterPolicy;
 
 
 /**
