@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor.core;
+package org.exoplatform.social.xmlprocessor.api.impl;
 
 import org.exoplatform.social.xmlprocessor.api.Filter;
 import org.exoplatform.social.xmlprocessor.api.Processor;
@@ -22,7 +22,6 @@ import org.exoplatform.social.xmlprocessor.core.DOMContentEscapeFilter;
 import org.exoplatform.social.xmlprocessor.core.DOMLineBreakerFilter;
 import org.exoplatform.social.xmlprocessor.core.DOMXMLTagFilter;
 import org.exoplatform.social.xmlprocessor.core.LineBreakerFilter;
-import org.exoplatform.social.xmlprocessor.core.ProcessorImpl;
 import org.exoplatform.social.xmlprocessor.core.XMLBalancer;
 import org.exoplatform.social.xmlprocessor.core.XMLTagFilter;
 import org.exoplatform.social.xmlprocessor.core.model.XMLTagFilterPolicy;
@@ -32,9 +31,10 @@ import org.exoplatform.social.xmlprocessor.core.util.Tokenizer;
 import junit.framework.TestCase;
 
 /**
- Tests for the XML Input Process.
- @author PhuongLM
-*/
+ * Unit Test for {@link ProcessorImpl}.
+ *
+ * @author Ly Minh Phuong - http://phuonglm.net
+ */
 public class ProcessorTest extends TestCase {
     public void testXMLBalancer() {
       Processor processor = new ProcessorImpl();

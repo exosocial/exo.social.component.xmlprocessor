@@ -18,32 +18,34 @@ package org.exoplatform.social.xmlprocessor.core.model;
 
 import java.util.LinkedHashMap;
 
-import org.exoplatform.social.xmlprocessor.core.model.Attributes;
-
 /**
- * Containt LinkedHashMap<Tag, Attributes> which can be use for whiteList or blackList  
+ * Contains LinkedHashMap<Tag, Attributes> which can be use for whiteList or blackList.
+ *
  * @author Ly Minh Phuong - http://phuonglm.net
  *
  */
 public class XMLTagFilterPolicy {
   private LinkedHashMap<String, Attributes> whiteList = new LinkedHashMap<String, Attributes>();
   /**
-   * get the policy List
+   * Gets the policy List.
+   *
    * @return the whiteList
    */
   public LinkedHashMap<String, Attributes> getWhiteList() {
     return whiteList;
   }
   /**
-   * set whitelist policy to DOMXMLagFilter
-   * @param whiteList
+   * Sets whitelist policy to DOMXMLagFilter.
+   *
+   * @param whiteList the white list
    */
   public void setWhiteList(LinkedHashMap<String, Attributes> whiteList) {
     this.whiteList = whiteList;
   }
   
   /**
-   * add TagStrings to whiteList  
+   * Adds TagStrings to whiteList.
+   *
    * @param tagStrings
    */
   public void addAllowTags(String... tagStrings){
@@ -55,7 +57,8 @@ public class XMLTagFilterPolicy {
     }
   }
   /**
-   * Add Tag and Attrubutes to whitelist. If tag Not in
+   * Adds Tag and Attrubutes to whitelist. If tag Not in.
+   *
    * @param tag which tag of this attribute list
    * @param attributes attribute List which add to AlowTag
    */
@@ -74,7 +77,8 @@ public class XMLTagFilterPolicy {
   }
   
   /**
-   * Remove Allowed Attribute in this whiteList
+   * Removes Allowed Attribute in this whiteList.
+   *
    * @param tag
    * @param attributes
    */

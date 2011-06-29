@@ -17,16 +17,18 @@
 package org.exoplatform.social.xmlprocessor.api;
 
 /**
- * Interface of Filter, if you want to write your own filter you must implement 
- * this interface in your class.
+ * Filter interface is used to filter input. To filter some input, just
+ * provide an interface to processor.
+ *
  * @author Ly Minh Phuong - http://phuonglm.net
  *
  */
 public interface Filter {
   /**
-   * The Processor'll call this function on each filter to process the Data
-   * @param input
-   * @return an Object which the result after filtered
+   * Filters the input data.
+   *
+   * @param input the input data
+   * @return an Object with the result after filtered
    */
   public Object doFilter(Object input);
 }

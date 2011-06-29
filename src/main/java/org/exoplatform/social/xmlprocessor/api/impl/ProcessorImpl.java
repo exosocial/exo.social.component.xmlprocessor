@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.social.xmlprocessor.core;
+package org.exoplatform.social.xmlprocessor.api.impl;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -37,6 +37,11 @@ public class ProcessorImpl implements Processor {
    */
   public void addFilter(Filter filter) {
     filters.add(filter);
+  }
+
+  @Override
+  public void removeFilter(Filter addedFilter) {
+    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   /* (non-Javadoc)

@@ -16,47 +16,38 @@
  */
 package org.exoplatform.social.xmlprocessor.core;
 
-import org.exoplatform.social.xmlprocessor.core.DOMLineBreakerFilter;
 import org.exoplatform.social.xmlprocessor.core.model.Node;
 import org.exoplatform.social.xmlprocessor.core.util.DOMParser;
 import org.exoplatform.social.xmlprocessor.core.util.Tokenizer;
 
 import junit.framework.TestCase;
 
-public class DOMLineBreakerTest extends TestCase {
+/**
+ * Unit test for {@link DOMContentEscapeFilter}.
+ */
+public class DOMContentEscapeFilterTest extends TestCase {
 
-  public void testDOMLineBreakerFilter() {
+  /**
+   * Tests {@link DOMContentEscapeFilter#doFilter(Object)}.
+   */
+  public void testDOMContentEscape() {
     assertEquals(
         "",
-        new DOMLineBreakerFilter().doFilter(
+        new DOMContentEscapeFilter().doFilter(
             DOMParser.createDOMTree(new Node(), Tokenizer.tokenize("")))
             .toString());
-    assertEquals(
-        "hello 1",
-        new DOMLineBreakerFilter().doFilter(
-            DOMParser.createDOMTree(new Node(), Tokenizer.tokenize("hello 1")))
-            .toString());
 
     assertEquals(
-        "hello 1<br />hello 2",
-        new DOMLineBreakerFilter().doFilter(
-            DOMParser.createDOMTree(new Node(),
-                Tokenizer.tokenize("hello 1\nhello 2"))).toString());
-    assertEquals(
-        "hello 1<br />hello 2",
-        new DOMLineBreakerFilter().doFilter(
+        "hello 1\r\nhello 2",
+        new DOMContentEscapeFilter().doFilter(
             DOMParser.createDOMTree(new Node(),
                 Tokenizer.tokenize("hello 1\r\nhello 2"))).toString());
-    assertEquals(
-        "hello 1 <br /> hello 2",
-        new DOMLineBreakerFilter().doFilter(
-            DOMParser.createDOMTree(new Node(),
-                Tokenizer.tokenize("hello 1 <br /> hello 2"))).toString());
-    assertEquals(
-        "hello 1 <br /> hello 2 <c>",
-        new DOMLineBreakerFilter().doFilter(
-            DOMParser.createDOMTree(new Node(),
-                Tokenizer.tokenize("hello 1 <br /> hello 2 <c>"))).toString());
 
+    assertEquals(
+        "&lt;b&gt; = hello 1 &amp;&quot;\\ hello 2 &lt;a&gt;",
+        new DOMContentEscapeFilter().doFilter(
+            DOMParser.createDOMTree(new Node(),
+                Tokenizer.tokenize("<b> = hello 1 &\"\\ hello 2 <a>")))
+            .toString());
   }
 }

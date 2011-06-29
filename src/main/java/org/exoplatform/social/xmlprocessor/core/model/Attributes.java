@@ -1,5 +1,5 @@
 /*
- 
+ * Copyright (C) 2003-2011 eXo Platform SAS.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,7 +16,9 @@
  */
 package org.exoplatform.social.xmlprocessor.core.model;
 
-import java.util.*;
+
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 /**
  * The attributes of an Node.
@@ -30,13 +32,14 @@ import java.util.*;
  * @author Ly Minh Phuong - http://phuonglm.net
  */
 public class Attributes {
-  private LinkedHashMap<String, String> attributes = new LinkedHashMap<String, String>(
-      2);
-
-  // linked hash map to preserve insertion order.
 
   /**
-   * Get an attribute value by key.
+   * Linked hash map to preserve insertion order.
+   */
+  private LinkedHashMap<String, String> attributes = new LinkedHashMap<String, String>(2);
+
+  /**
+   * Gets an attribute value by key.
    * 
    * @param key
    *            the attribute key
@@ -49,7 +52,7 @@ public class Attributes {
   }
 
   /**
-   * Set a new attribute, or replace an existing one by key.
+   * Sets a new attribute, or replace an existing one by key.
    * 
    * @param key
    *            attribute key
@@ -61,7 +64,7 @@ public class Attributes {
   }
 
   /**
-   * Remove an attribute by key.
+   * Removes an attribute by key.
    * 
    * @param key
    *            attribute key to remove
@@ -71,10 +74,10 @@ public class Attributes {
   }
 
   /**
-   * Tests if these attributes contain an attribute with this key.
+   * Checks if these attributes contain an attribute with this key.
    * 
    * @param key
-   *            key to check for
+   *            key to be checked
    * @return true if key exists, false otherwise
    */
   public boolean hasKey(String key) {
@@ -91,9 +94,8 @@ public class Attributes {
   }
 
   /**
-   * get the KeySet iterator of attributes
+   * Gets the KeySet iterator of attributes
    * 
-   * @param             
    * @return Iterator<String>
    */
   public Iterator<String> getKeyIterator() {
@@ -101,7 +103,7 @@ public class Attributes {
   }
 
   /**
-   * Get the XML representation of these attributes.
+   * Gets the XML representation of these attributes.
    * 
    * @return XML
    */
@@ -115,14 +117,18 @@ public class Attributes {
   }
   
   /**
-   * Clear all attrib of the of the 
-   * 
-   * @return XML
+   * Clears all attrib of the of the
    */
   public void clear() {
     attributes.clear();
   }
 
+  /**
+   * Converts to string xml presentation of this atributes
+   *
+   * @return a xml presentation string
+   */
+  @Override
   public String toString() {
     return xml();
   }

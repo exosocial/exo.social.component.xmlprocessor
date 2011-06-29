@@ -27,7 +27,7 @@ import java.util.List;
  */
 public class Tokenizer {
   /**
-   * this method will split tag of XML String to an arrayList
+   * Splits tag of XML String to an arrayList
    * 
    * @param html
    * @return List<String> which each item is a token of HTML tag
