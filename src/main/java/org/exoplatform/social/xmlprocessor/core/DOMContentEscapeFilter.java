@@ -24,14 +24,19 @@ import org.exoplatform.social.xmlprocessor.core.model.Node;
 
 
 /**
- * The filter escape all content of the DOMTree to make sure it cleaned.
+ * The filter escapes all content of the DOMTree to make sure it cleaned.
  * <b>Note:</b> this filter cannot detect that content escaped or not so make 
  * sure that you don't use it twice or using it with escaped content.
+ *
  * @author Ly Minh Phuong - http://phuonglm.net
  *
  */
 public class DOMContentEscapeFilter implements Filter {
 
+  /**
+   * {@inheritDoc}
+   */
+  @Override
   public Object doFilter(Object input) {
     if (input instanceof Node) {
       nodeFilter((Node) input);

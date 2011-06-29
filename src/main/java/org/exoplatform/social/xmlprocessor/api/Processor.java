@@ -1,26 +1,49 @@
+/*
+ * Copyright (C) 2003-2011 eXo Platform SAS.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
 package org.exoplatform.social.xmlprocessor.api;
 
 
+/**
+ * The processor to process an input object. This processor is used to dispatch input data to all filters.
+ *
+ * @author Ly Minh Phuong - http://phuonglm.net
+ */
 public interface Processor {
 
   /**
-   * Add Filter to Processor
-   * 
-   * @param filter
+   * Adds a defined filter to this processor.
+   *
+   * @param filter a defined filter
    */
-  public abstract void addFilter(Filter filter);
+  void addFilter(Filter filter);
 
   /**
-   * Remove a filter which instant of Class from queue.
-   * @param className
+   * Removes a defined filter which is added.
+   *
+   * @param addedFilter the added filter
    */
-  public abstract void removeFilter(Class className);
+  void removeFilter(Filter addedFilter);
 
   /**
-   * Process an Object though Filter chain.
-   * @param input
-   * @return
+   * Processes an input object though filter chain.
+   *
+   * @param input the input object
+   * @return new processed object by added filters.
    */
-  public abstract Object process(Object input);
+  Object process(Object input);
 
 }

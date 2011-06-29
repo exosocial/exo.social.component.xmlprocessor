@@ -26,6 +26,10 @@ import org.exoplatform.social.xmlprocessor.api.Filter;
  */
 public class LineBreakerFilter implements Filter {
 
+  /**
+   * {@inheritDoc}
+   */
+  @Override
   public Object doFilter(Object input) {
     if (input instanceof String) {
       String inputString = (String) input;

@@ -31,6 +31,10 @@ import org.exoplatform.social.xmlprocessor.core.util.Tokenizer;
  * 
  */
 public class XMLBalancer implements Filter {
+  /**
+   * {@inheritDoc}
+   */
+  @Override
   public Object doFilter(Object input) {
     if (input instanceof String) {
       input = createDOMTree((String) input).toString();
@@ -38,7 +42,8 @@ public class XMLBalancer implements Filter {
     return input;
   }
 /**
- * Create DOM tree From String input and Balance it.
+ * Creates DOM tree From String input and Balance it.
+ *
  * @param xmlString
  * @return
  */

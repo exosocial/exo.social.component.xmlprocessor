@@ -28,14 +28,16 @@ import org.exoplatform.social.xmlprocessor.core.model.XMLTagFilterPolicy;
 
 /**
  * this Filter travel through DOM tree and find if any TAG not satisfied the rules
- * spectify by whiteList. With wrong TAG it change it to content Type. 
+ * spectify by whiteList. With wrong TAG it change it to content Type.
+ *
  * @author Ly Minh Phuong - http://phuonglm.net
  *
  */
 public class DOMXMLTagFilter implements Filter {
   private LinkedHashMap<String, Attributes> whiteList = new LinkedHashMap<String, Attributes>();
   /**
-   * get the policy List
+   * Gets the policy List.
+   *
    * @return the whiteList
    */
   public LinkedHashMap<String, Attributes> getWhiteList() {
@@ -43,7 +45,8 @@ public class DOMXMLTagFilter implements Filter {
   }
   
   /**
-   * set whitelist policy to DOMXMLagFilter
+   * Sets whitelist policy to DOMXMLagFilter.
+   *
    * @param whiteList
    */
   public void setWhiteList(LinkedHashMap<String, Attributes> whiteList) {
@@ -51,13 +54,18 @@ public class DOMXMLTagFilter implements Filter {
   }
   
   /**
-   * Contructor, the policy must be set from constructor
+   * Contructor, the policy must be set from constructor.
+   *
    * @param policy
    */
   public DOMXMLTagFilter(XMLTagFilterPolicy policy) {
     whiteList = policy.getWhiteList();
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  @Override
   public Object doFilter(Object input) {
     if (input instanceof Node) {
       nodeFilter((Node) input);

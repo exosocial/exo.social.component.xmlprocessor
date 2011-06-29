@@ -32,7 +32,7 @@ public class Node {
   private LinkedList<Node> childNodes = new LinkedList<Node>();
 
   /**
-   * get Parent Node of current Node. If current Node is root, parent Node ==
+   * Gets parent Node of current Node. If current Node is root, parent Node ==
    * null;
    * 
    * @return parent node
@@ -42,87 +42,106 @@ public class Node {
   }
   
   /**
-   * set the parent Node of currentNode
+   * Sets the parent Node of currentNode
+   *
    * @param parentNode
    */
   public void setParentNode(Node parentNode) {
     this.parentNode = parentNode;
   }
+
   /**
-   * Get title of Node, node's title ak the tag name.
-   * @return
+   * Gets title of Node, node's title ak the tag name.
+   *
+   * @return the node title
    */
   public String getTitle() {
     return title;
   }
 
   /**
-   * set title of Node, node's title ak the tag name.
+   * Sets title of Node, node's title ak the tag name.
+   *
    * @param nodeTitle
    */
   public void setTitle(String nodeTitle) {
     this.title = nodeTitle;
   }
   /**
-   * return Attributes of Node
-   * @return
+   * Returns Attributes of Node
+   *
+   * @return the attributes
    */
   public Attributes getAttributes() {
     return attributes;
   }
   /**
-   * set Attributes of Node
+   * Sets attributes of Node.
+   *
    * @param attributes
    */
   public void setAttributes(Attributes attributes) {
     this.attributes = attributes;
   }
   /**
-   * get the Content of Node, if Node have Content it mean that is text Node.
-   * @return
+   * Gets the Content of Node, if Node have Content it mean that is text Node.
+   *
+   * @return the content node
    */
   public String getContent() {
     return content;
   }
   /**
-   * set the Content of Node, if Node have Content it mean that is text Node.
+   * Sets the Content of Node, if Node have Content it mean that is text Node.
+   *
    * @param content
    */
   public void setContent(String content) {
     this.content = content;
   }
   /**
-   * get the list child node of current Node
-   * @return
+   * Gets the list child nodes of current Node.
+   *
+   * @return child nodes
    */
   public LinkedList<Node> getChildNodes() {
     return childNodes;
   }
   
   /**
-   * set the list child node of current Node
-   * @param childNodes
+   * Sets the list child nodes of current Node.
+   *
+   * @param childNodes the child nodes
    */
   public void setChildNodes(LinkedList<Node> childNodes) {
     this.childNodes = childNodes;
   }
   
   /**
-   * add childNode to thisNode
-   * @param childNode
+   * Adds child Node to this Node.
+   *
+   * @param childNode the child node
    */
   public void addChildNode(Node childNode) {
     this.childNodes.add(childNode);
   }
+
   /**
-   * add Attribute to currentNode.
-   * @param key
-   * @param value
+   * Adds Attribute to current Node.
+   *
+   * @param key attribute key
+   * @param value attribute value
    */
   public void addAttribute(String key, String value) {
     this.attributes.put(key, value);
   }
 
+  //TODO java docs
+  /**
+   *
+   * @return
+   */
+  @Override
   public String toString() {
     StringBuilder xmlString = new StringBuilder("");
     boolean selfClosedTag = false;
@@ -161,8 +180,9 @@ public class Node {
     return xmlString.toString();
   }
   /**
-   * return the Open Tag of this Node, if this node is textNode so this will equal
-   * blank string 
+   * Returns the Open Tag of this Node, if this node is textNode so this will equal
+   * blank string.
+   *
    * @return
    */
   public String toOpenString() {
@@ -196,8 +216,9 @@ public class Node {
     return xmlString.toString();
   }
   /**
-   * return the Close Tag of this Node, if this node is textNode so this will equal
-   * blank string 
+   * Returns the Close Tag of this Node, if this node is textNode so this will equal
+   * blank string.
+   *
    * @return
    */  
   public String toCloseString() {
@@ -223,7 +244,7 @@ public class Node {
     return xmlString.toString();
   }
   /**
-   * Convert this Tag Node to Content Node, add Close Tag at the end of child nodes
+   * Converts this Tag Node to Content Node, add Close Tag at the end of child nodes
    * and move all child Nodes of this Node to parent Node.
    */
   public void convertToContent(){
@@ -241,7 +262,8 @@ public class Node {
     }
   }
   /**
-   * Move all child Node of this Node to parentNode and insert it after this Node;
+   * Moves all child Node of this Node to parentNode and insert it after this Node.
+   *
    * @param insertPosition
    */
   public void moveAllChildNodesToParentNode(int insertPosition){
@@ -250,7 +272,8 @@ public class Node {
     }
   }
   /**
-   * Move all child Node of this Node to destNode and insert it after insertPosition;
+   * Moves all child Node of this Node to destNode and insert it after insertPosition;
+   *
    * @param destNode
    * @param insertPosition
    */

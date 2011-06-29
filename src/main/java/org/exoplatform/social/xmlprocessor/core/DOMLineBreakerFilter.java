@@ -29,6 +29,12 @@ import org.exoplatform.social.xmlprocessor.core.model.Node;
  */
 public class DOMLineBreakerFilter implements Filter {
 
+  /**
+   * TODO Java docs.
+   *
+   * @param input the input data
+   * @return
+   */
   public Object doFilter(Object input) {
     if (input instanceof Node) {
       nodeFilter((Node) input);

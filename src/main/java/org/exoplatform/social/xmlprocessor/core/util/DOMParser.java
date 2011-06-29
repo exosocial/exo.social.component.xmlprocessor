@@ -38,7 +38,8 @@ public class DOMParser {
       .compile("(\\w*)\\s*=\\s*(\"([^\"]*)\"|'([^']*)')"); // prop="...."
   
   /**
-   * This Function create the XML DOM tree from XML token List tree.
+   * Creates the XML DOM tree from XML token List tree.
+   *
    * @param xmlTokens The HTML token array.
    * @return TreeNode contain the content parsed from token list.
    */
@@ -48,13 +49,12 @@ public class DOMParser {
   }
   
   /**
-   * This Function create the XML DOM tree from XML token List tree as 
+   * Creates the XML DOM tree from XML token List tree as
    * childNodeList of currentNode.
    * @param currentNode The Node to add childNode to.
    * @param xmlTokens The HTML token array
    * @return TreeNode contain the content parsed from token list
    */
-  
   public static Node createDOMTree(Node currentNode, List<String> xmlTokens) {
     boolean selfCloseTag, hasCloseTag;
     Node parsingNode;
