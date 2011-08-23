@@ -8,3 +8,5 @@ A processor library for filtering a string text input (html, xml, bad words...) 
 
 
 3. Project links
+
+4. This project is adopted into eXo Social code base http://svn.exoplatform.org/projects/social/branches/1.2.x/component/common/src/main/java/org/exoplatform/social/common/xmlprocessor/
